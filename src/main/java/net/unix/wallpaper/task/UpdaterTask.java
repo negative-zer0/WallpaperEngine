@@ -54,7 +54,7 @@ public class UpdaterTask extends TimerTask
 
             graphics.drawString(time, 105 - fontMetrics.stringWidth(time) / 2, bufferedImage.getHeight() - 20);
             graphics.drawString(date, (bufferedImage.getWidth() - 90) - fontMetrics.stringWidth(date) / 2, bufferedImage.getHeight() - 20);
-            graphics.drawString(cpu, (bufferedImage.getWidth() / 2) - fontMetrics.stringWidth(cpu) / 2, bufferedImage.getHeight() - 20);
+            graphics.drawString(cpu, (bufferedImage.getWidth() / 2) - fontMetrics.stringWidth(cpu) / 2, bufferedImage.getHeight() - 15);
             graphics.dispose();
 
             final File file = new File(wallpaperEngine.getDataFolder(), "image_updated.png");
