@@ -5,9 +5,11 @@ package net.unix.wallpaper;
  * @since 27.07.2020
  */
 
-public class ApplicationContext
-{
+public class ApplicationContext {
+
     public static void main(String... args) {
-        new WallpaperEngine().onStart();
+        new WallpaperEngine()
+                .onStart();
     }
+
 }

@@ -13,19 +13,19 @@ import com.sun.jna.win32.W32APITypeMapper;
  * @since 27.07.2020
  */
 
-public class WallpaperModifier
-{
+public class WallpaperModifier {
+
     private final JNA jna = JNA.INSTANCE;
 
-    public void setWallpaperBackground(final File file) {
+    public void setWallpaperBackground(File file) {
         jna.SystemParametersInfo(new WinDef.UINT_PTR(0x14),
                 new WinDef.UINT_PTR(0x00), file.getAbsolutePath(),
                 new WinDef.UINT_PTR(0x03)
         );
     }
 
-    public interface JNA extends StdCallLibrary
-    {
+    public interface JNA extends StdCallLibrary {
+
         JNA INSTANCE = Native.load("user32", JNA.class,
                 new HashMap<String, Object>() {
                     {
@@ -34,6 +34,8 @@ public class WallpaperModifier
                     }
                 });
 
-        void SystemParametersInfo(final WinDef.UINT_PTR uiAction, final WinDef.UINT_PTR ui, final String pv, final WinDef.UINT_PTR WinIni);
+        void SystemParametersInfo(WinDef.UINT_PTR uiAction, WinDef.UINT_PTR ui, String pv, WinDef.UINT_PTR WinIni);
+
     }
+
 }
